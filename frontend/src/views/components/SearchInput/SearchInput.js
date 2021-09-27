@@ -1,9 +1,7 @@
 import "./searchInput.scss";
 
-const isError = true;
+const isError = false;
 const errorText = "Error text";
-
-//TODO: placeholder, placeholder style
 
 const SearchInput = () => {
   return (
@@ -14,7 +12,10 @@ const SearchInput = () => {
             ? "search-container__input"
             : "search-container__input--error"
         }
+        placeholder="Type a name/city/year/company/country"
+        type="text"
       />
+
       <span
         className={
           !isError ? "search-container__text" : "search-container__text--error"

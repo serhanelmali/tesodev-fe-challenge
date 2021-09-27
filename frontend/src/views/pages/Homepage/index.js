@@ -1,6 +1,5 @@
+import SearchBar from "../../layouts/SearchBar/SearchBar";
 import logo from "../../../assets/tesodevlogo.jpg";
-import SearchButton from "../../components/Button/SearchButton";
-import SearchInput from "../../components/SearchInput/SearchInput";
 
 import "./homepage.scss";
 
@@ -13,10 +12,9 @@ const Homepage = () => {
           <span className="container__top__text">Search web app</span>
         </div>
       </div>
-      <div className="container__middle">
-        <SearchInput />
-        <SearchButton />
-      </div>
+
+      <SearchBar />
+
       <div className="container__bottom"></div>
     </div>
   );
