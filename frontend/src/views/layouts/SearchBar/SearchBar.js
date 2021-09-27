@@ -4,10 +4,10 @@ import "./searchBar.scss";
 
 const SearchBar = () => {
   return (
-    <form className="search-bar-form">
+    <div className="search-bar">
       <SearchInput />
       <SearchButton />
-    </form>
+    </div>
   );
 };
 
