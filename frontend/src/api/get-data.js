@@ -4,7 +4,7 @@ const getData = async (value) => {
   );
   const persons = await response.json();
 
-  return persons;
+  return persons.data;
 };
 
 export default getData;

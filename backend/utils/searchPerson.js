@@ -27,7 +27,6 @@ const searchPerson = (persons, searchValue, results) => {
       results.push(personToAdd);
     }
   }
-  console.log(results);
 };
 
 module.exports = searchPerson;
