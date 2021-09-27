@@ -19,7 +19,10 @@ const searchPerson = (persons, searchValue, results) => {
         );
       }
     }
-    console.log(personToAdd);
+
+    if (!results.includes(personToAdd)) {
+      results.push(personToAdd);
+    }
   }
 };
 
