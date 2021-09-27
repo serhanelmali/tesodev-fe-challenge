@@ -1,5 +1,6 @@
 import logo from "../../../assets/tesodevlogo.jpg";
 import SearchButton from "../../components/Button/SearchButton";
+import SearchInput from "../../components/SearchInput/SearchInput";
 
 import "./homepage.scss";
 
@@ -13,6 +14,7 @@ const Homepage = () => {
         </div>
       </div>
       <div className="container__middle">
+        <SearchInput />
         <SearchButton />
       </div>
       <div className="container__bottom"></div>

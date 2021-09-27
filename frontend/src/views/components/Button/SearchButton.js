@@ -1,4 +1,4 @@
-import "./searchbutton.scss";
+import "./searchButton.scss";
 
 const SearchButton = () => {
   return <button>Search</button>;
