@@ -1,6 +1,8 @@
 const Person = require("../models/person");
 
 const searchPerson = (persons, searchValue, results) => {
+  results.splice(0, results.length);
+
   for (let i = 0; i < persons.length; i++) {
     const person = persons[i];
 
@@ -22,6 +24,8 @@ const searchPerson = (persons, searchValue, results) => {
       }
     }
   }
+
+  console.log(results);
 };
 
 module.exports = searchPerson;
