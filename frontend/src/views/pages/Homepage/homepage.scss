@@ -1,0 +1,42 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-block: 75px;
+
+    &__wrapper {
+      position: relative;
+    }
+
+    &__text {
+      position: absolute;
+      bottom: -20px;
+      right: -35px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  &__middle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    input {
+      width: 600px;
+      height: 30px;
+      margin-right: 15px;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+  }
+}
