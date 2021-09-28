@@ -1,11 +1,13 @@
-const getData = async (value) => {
-  const response = await fetch(
-    `http://localhost:80/search?searchterm=${value}`
-  );
-  const persons = await response.json();
+import axios from "axios";
 
-  console.log(persons);
-  return persons.data;
+const getPersons = async ({ onSucces, onError } = {}, value) => {
+  try {
+    const result = await axios(value);
+    if (onSuccess) onSucces(result);
+    return result;
+  } catch (err) {
+    if (onError) onError(err);
+  }
 };
 
-export default getData;
+export default getPersons;

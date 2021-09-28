@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-import getData from "../api/get-data";
 
 const AppContext = createContext();
 
@@ -10,10 +9,6 @@ export function AppWrapper({ children }) {
     isLoading: false,
     error: null,
   });
-
-  const fetchDatas = (value) => {
-    getData(value);
-  };
 
   let sharedState = {
     searchTerm,
