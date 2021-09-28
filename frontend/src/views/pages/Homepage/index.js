@@ -1,9 +1,14 @@
+import { useAppContext } from "../../../context/store";
 import SearchBar from "../../layouts/SearchBar/SearchBar";
-import logo from "../../../assets/tesodevlogo.jpg";
 import SearchResults from "../../layouts/SearchResults/SearchResults";
+import logo from "../../../assets/tesodevlogo.jpg";
 import "./homepage.scss";
 
 const Homepage = () => {
+  const store = useAppContext();
+  const hasData = store?.persons.data.length > 0;
+  const isLoading = store?.persons.isLoading;
+
   return (
     <div className="container">
       <div className="container__top">
@@ -14,7 +19,7 @@ const Homepage = () => {
       </div>
       <div className="container__bottom">
         <SearchBar />
-        <SearchResults />
+        {isLoading ? "loading" : hasData ? <SearchResults /> : ""}
       </div>
     </div>
   );
