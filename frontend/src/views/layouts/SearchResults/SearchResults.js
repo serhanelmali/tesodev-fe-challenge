@@ -5,7 +5,6 @@ import "./searchresults.scss";
 const SearchResults = () => {
   const store = useAppContext();
   const persons = store?.persons.data;
-  console.log(persons);
 
   return (
     <div className="search-results__container">
