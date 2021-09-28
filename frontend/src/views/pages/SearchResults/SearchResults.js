@@ -7,7 +7,7 @@ import "./searchresults.scss";
 
 const SearchResults = () => {
   const store = useAppContext();
-  const persons = store?.persons.data;
+  const currentPersons = store?.currentPersons;
 
   return (
     <div className="search-results__container">
@@ -20,19 +20,17 @@ const SearchResults = () => {
             <SearchBar />
           </div>
           <div className="search-result__container__wrapper__right__person-list">
-            {persons &&
-              persons
-                .slice(0, 6)
-                .map((person, id) => (
-                  <PersonInfo
-                    country={person.country}
-                    city={person.city}
-                    email={person.email}
-                    fullname={person.fullname}
-                    date={person.date}
-                    key={id}
-                  />
-                ))}
+            {currentPersons &&
+              currentPersons.map((person, id) => (
+                <PersonInfo
+                  country={person.country}
+                  city={person.city}
+                  email={person.email}
+                  fullname={person.fullname}
+                  date={person.date}
+                  key={id}
+                />
+              ))}
           </div>
         </div>
       </div>

@@ -11,6 +11,15 @@ export function AppWrapper({ children }) {
     error: null,
   });
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [personsPerPage, setPersonsPerPage] = useState(6);
+  const indexOfLastPerson = currentPage * personsPerPage;
+  const indexOfFirstPerson = indexOfLastPerson - personsPerPage;
+  const currentPersons = persons.data.slice(
+    indexOfFirstPerson,
+    indexOfLastPerson
+  );
+
   const fetchPersons = (value) => {
     setPersons({
       data: [],
@@ -42,6 +51,8 @@ export function AppWrapper({ children }) {
     persons,
     setPersons,
     fetchPersons,
+    currentPage,
+    currentPersons,
   };
 
   return (
