@@ -1,5 +1,6 @@
-import PersonInfo from "../../components/PersonInfo/PersonInfo";
 import { useAppContext } from "../../../context/store";
+import { Link } from "react-router-dom";
+import PersonInfo from "../../components/PersonInfo/PersonInfo";
 import "./searchresultspreview.scss";
 
 const SearchResultsPreview = () => {
@@ -8,7 +9,7 @@ const SearchResultsPreview = () => {
 
   return (
     <div
-      className="search-results__container"
+      className="search-results-preview__container"
       style={persons.length <= 0 ? { opacity: 0 } : { opacity: 1 }}
     >
       {persons &&
@@ -25,7 +26,7 @@ const SearchResultsPreview = () => {
             />
           ))}
 
-      <button className="search-results__container">Show more...</button>
+      <Link to="/searchresults">Show more...</Link>
     </div>
   );
 };

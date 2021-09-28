@@ -1,0 +1,25 @@
+.search-results__container {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &__top {
+    padding: 35px 0 0 35px;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 120px;
+      flex: 1;
+      padding-right: 30px;
+    }
+    div {
+      flex: 4;
+    }
+
+    .search-container__text {
+      display: none;
+    }
+  }
+}
