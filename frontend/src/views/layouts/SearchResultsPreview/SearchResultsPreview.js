@@ -12,21 +12,26 @@ const SearchResultsPreview = () => {
       className="search-results-preview__container"
       style={persons.length <= 0 ? { opacity: 0 } : { opacity: 1 }}
     >
-      {persons &&
-        persons
-          .slice(0, 3)
-          .map((person, id) => (
-            <PersonInfo
-              country={person.country}
-              city={person.city}
-              email={person.email}
-              fullname={person.fullname}
-              date={person.date}
-              key={id}
-            />
-          ))}
+      <div className="search-results-preview__container__wrapper">
+        <div className="search-results-preview__container__wrapper__person-list">
+          {persons &&
+            persons
+              .slice(0, 3)
+              .map((person, id) => (
+                <PersonInfo
+                  country={person.country}
+                  city={person.city}
+                  email={person.email}
+                  fullname={person.fullname}
+                  date={person.date}
+                  key={id}
+                />
+              ))}
 
-      <Link to="/searchresults">Show more...</Link>
+          <Link to="/searchresults">Show more...</Link>
+        </div>
+      </div>
+      <div className="search-results-preview__container__wrapper__empty"></div>
     </div>
   );
 };

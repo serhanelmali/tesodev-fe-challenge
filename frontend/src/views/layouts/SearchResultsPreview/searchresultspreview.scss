@@ -1,12 +1,29 @@
 .search-results-preview__container {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  border: 1px solid #484848;
-  border-radius: 4px;
-  width: 79%;
-  min-height: 250px;
-  padding: 15px 17px 15px 17px;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 250px;
+    padding-block: 15px;
+    margin-right: 20px;
+    border: 1px solid #484848;
+    border-radius: 4px;
+
+    &__person-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+    }
+
+    &__empty {
+      width: 100px;
+    }
+  }
 
   a {
     padding-top: 20px;
