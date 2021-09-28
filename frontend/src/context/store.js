@@ -4,7 +4,7 @@ import getPersons from "../api/getPersons";
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [searchTerm, setSearchTerm] = useState("tasdasdasurk");
+  const [searchTerm, setSearchTerm] = useState("tur");
   const [persons, setPersons] = useState({
     message: null,
     data: [],
@@ -38,8 +38,6 @@ export function AppWrapper({ children }) {
       },
       value
     );
-
-    console.log(persons);
   };
 
   let sharedState = {
