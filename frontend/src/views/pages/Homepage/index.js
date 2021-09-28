@@ -12,9 +12,7 @@ const Homepage = () => {
           <span className="container__top__text">Search web app</span>
         </div>
       </div>
-
       <SearchBar />
-
       <div className="container__bottom"></div>
     </div>
   );

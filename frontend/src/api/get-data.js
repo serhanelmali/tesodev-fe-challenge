@@ -4,6 +4,7 @@ const getData = async (value) => {
   );
   const persons = await response.json();
 
+  console.log(persons);
   return persons.data;
 };
 
