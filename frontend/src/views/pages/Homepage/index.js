@@ -5,10 +5,6 @@ import logo from "../../../assets/tesodevlogo.jpg";
 import "./homepage.scss";
 
 const Homepage = () => {
-  const store = useAppContext();
-  const hasData = store?.persons.data.length > 0;
-  const isLoading = store?.persons.isLoading;
-
   return (
     <div className="container">
       <div className="container__top">
@@ -19,7 +15,7 @@ const Homepage = () => {
       </div>
       <div className="container__bottom">
         <SearchBar />
-        {isLoading ? "loading" : hasData ? <SearchResults /> : ""}
+        <SearchResults />
       </div>
     </div>
   );

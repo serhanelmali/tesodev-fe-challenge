@@ -8,14 +8,12 @@ export function AppWrapper({ children }) {
   const [persons, setPersons] = useState({
     message: null,
     data: [],
-    isLoading: false,
     error: null,
   });
 
   const fetchPersons = (value) => {
     setPersons({
       data: [],
-      isLoading: true,
       error: null,
     });
 
@@ -24,7 +22,6 @@ export function AppWrapper({ children }) {
         onSuccess(result) {
           setPersons({
             data: result.data.data,
-            isLoading: false,
             error: null,
           });
         },
@@ -32,7 +29,6 @@ export function AppWrapper({ children }) {
           setPersons({
             data: [],
             error: error,
-            isLoading: false,
           });
         },
       },

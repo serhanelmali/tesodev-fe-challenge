@@ -7,7 +7,10 @@ const SearchResults = () => {
   const persons = store?.persons.data;
 
   return (
-    <div className="search-results__container">
+    <div
+      className="search-results__container"
+      style={persons.length <= 0 ? { opacity: 0 } : { opacity: 1 }}
+    >
       {persons &&
         persons
           .slice(0, 3)
