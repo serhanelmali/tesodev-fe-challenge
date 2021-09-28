@@ -4,40 +4,50 @@ import getPersons from "../api/getPersons";
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [searchTerm, setSearch] = useState("az");
+  const [searchTerm, setSearchTerm] = useState("tasdasdasurk");
   const [persons, setPersons] = useState({
+    message: null,
     data: [],
     isLoading: false,
     error: null,
   });
 
-  const fetchPersons = () => {
+  const fetchPersons = (value) => {
     setPersons({
       data: [],
       isLoading: true,
       error: null,
     });
 
-    getPersons({
-      onSucces(result) {
-        setPersons({
-          data: result.data,
-          isLoading: false,
-          error: null,
-        });
+    getPersons(
+      {
+        onSuccess(result) {
+          setPersons({
+            data: result.data.data,
+            isLoading: false,
+            error: null,
+          });
+        },
+        onError(error) {
+          setPersons({
+            data: [],
+            error: error,
+            isLoading: false,
+          });
+        },
       },
-      onError(error) {
-        setPersons({
-          data: [],
-          error: error,
-          isLoading: false,
-        });
-      },
-    });
+      value
+    );
+
+    console.log(persons);
   };
 
   let sharedState = {
     searchTerm,
+    setSearchTerm,
+    persons,
+    setPersons,
+    fetchPersons,
   };
 
   return (

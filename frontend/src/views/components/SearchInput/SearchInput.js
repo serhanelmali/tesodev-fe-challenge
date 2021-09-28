@@ -1,9 +1,16 @@
+import { useAppContext } from "../../../context/store";
 import "./searchInput.scss";
 
-const isError = false;
-const errorText = "Error text";
-
 const SearchInput = () => {
+  const isError = false;
+  const errorText = "Error text";
+  const store = useAppContext();
+  const setSearchTerm = store.setSearchTerm;
+
+  const onChangeHandler = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="search-container">
       <input
@@ -14,6 +21,7 @@ const SearchInput = () => {
         }
         placeholder="Type a name/city/year/company/country"
         type="text"
+        onChange={onChangeHandler}
       />
 
       <span

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const getPersons = async ({ onSucces, onError } = {}, value) => {
+const getPersons = async ({ onSuccess, onError } = {}, value) => {
   try {
-    const result = await axios(value);
-    if (onSuccess) onSucces(result);
+    const result = await axios(`http://localhost/search?searchterm=${value}`);
+    if (onSuccess) onSuccess(result);
     return result;
   } catch (err) {
     if (onError) onError(err);
