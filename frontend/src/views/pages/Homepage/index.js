@@ -1,6 +1,5 @@
-import { useAppContext } from "../../../context/store";
 import SearchBar from "../../layouts/SearchBar/SearchBar";
-import SearchResults from "../../layouts/SearchResults/SearchResults";
+import SearchResultsPreview from "../../layouts/SearchResultsPreview/SearchResultsPreview";
 import logo from "../../../assets/tesodevlogo.jpg";
 import "./homepage.scss";
 
@@ -15,7 +14,7 @@ const Homepage = () => {
       </div>
       <div className="container__bottom">
         <SearchBar />
-        <SearchResults />
+        <SearchResultsPreview />
       </div>
     </div>
   );

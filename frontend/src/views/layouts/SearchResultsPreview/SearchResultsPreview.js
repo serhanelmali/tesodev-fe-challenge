@@ -1,8 +1,8 @@
 import PersonInfo from "../../components/PersonInfo/PersonInfo";
 import { useAppContext } from "../../../context/store";
-import "./searchresults.scss";
+import "./searchresultspreview.scss";
 
-const SearchResults = () => {
+const SearchResultsPreview = () => {
   const store = useAppContext();
   const persons = store?.persons.data;
 
@@ -30,4 +30,4 @@ const SearchResults = () => {
   );
 };
 
-export default SearchResults;
+export default SearchResultsPreview;
