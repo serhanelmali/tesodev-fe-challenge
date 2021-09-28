@@ -7,7 +7,11 @@ const SearchButton = () => {
   const searchTerm = store.searchTerm;
   const fetchPersons = store.fetchPersons;
 
-  return <button onClick={() => fetchPersons(searchTerm)}>Search</button>;
+  return (
+    <button className="search__button" onClick={() => fetchPersons(searchTerm)}>
+      Search
+    </button>
+  );
 };
 
 export default SearchButton;

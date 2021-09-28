@@ -22,6 +22,8 @@ const SearchResults = () => {
               key={id}
             />
           ))}
+
+      <button className="search-results__container">Show more...</button>
     </div>
   );
 };
