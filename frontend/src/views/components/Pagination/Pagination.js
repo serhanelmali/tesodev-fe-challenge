@@ -45,15 +45,14 @@ const Pagination = () => {
           </button>
         </li>
 
-        {pageNumbers.map((pageNumber) => (
-          <li>
+        {pageNumbers.map((pageNumber, id) => (
+          <li key={pageNumber}>
             <button
               className={
                 pageNumber === currentPage
                   ? "pagination-container__button--selected"
                   : "pagination-container__button"
               }
-              key={pageNumber}
               value={pageNumber}
               onClick={(e) => handleClick(e)}
             >

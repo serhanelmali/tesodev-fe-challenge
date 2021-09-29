@@ -20,7 +20,7 @@ export function AppWrapper({ children }) {
       );
     }
 
-    if (value === "yearB") {
+    if (value === "yearD") {
       return data.sort((a, b) =>
         a.date.substr(a.date.length - 4) < b.date.substr(b.date.length - 4)
           ? 1
@@ -29,11 +29,19 @@ export function AppWrapper({ children }) {
     }
 
     if (value === "nameA") {
-      return data.sort((a, b) => (a.fullname > b.fullname ? 1 : -1));
+      return data.sort((a, b) =>
+        a.fullname.toString() > b.fullname.toString() ? 1 : -1
+      );
+    }
+
+    if (value === "nameD") {
+      return data.sort((a, b) =>
+        a.fullname.toString() < b.fullname.toString() ? 1 : -1
+      );
     }
   };
 
-  const [sortValue, setSortValue] = useState("yearA");
+  const [sortValue, setSortValue] = useState("nameA");
   const [currentPage, setCurrentPage] = useState(0);
   const personsPerPage = 6;
   const indexOfLastPerson = currentPage * personsPerPage;

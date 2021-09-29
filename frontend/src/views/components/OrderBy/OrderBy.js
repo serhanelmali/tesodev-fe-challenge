@@ -21,10 +21,10 @@ const OrderBy = () => {
         {isClicked && (
           <div className="order__options">
             <ul>
-              <li>Name ascending</li>
-              <li>Name descending</li>
+              <li onClick={() => setSortValue("nameA")}>Name ascending</li>
+              <li onClick={() => setSortValue("nameD")}>Name descending</li>
               <li onClick={() => setSortValue("yearA")}>Year ascending</li>
-              <li onClick={() => setSortValue("yearB")}>Year descending</li>
+              <li onClick={() => setSortValue("yearD")}>Year descending</li>
             </ul>
           </div>
         )}
