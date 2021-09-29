@@ -1,0 +1,57 @@
+.order {
+  &__container {
+    position: absolute;
+    top: -30px;
+    right: -150px;
+    display: flex;
+    flex-direction: column;
+    width: 224px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 110px;
+    border: none;
+    background: none;
+    color: #484848;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  &__options {
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 120px;
+    border: 1px solid #484848;
+    background: white;
+    border-radius: 4px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
+
+      li {
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background: #c4c4c4;
+          color: white;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

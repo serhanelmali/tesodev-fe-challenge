@@ -24,12 +24,15 @@
       &__search {
         width: 100%;
       }
-
-      &__person-list {
-        .person__container {
-          margin-bottom: 10px;
-        }
-      }
     }
+  }
+}
+.search-result__container__wrapper__right__person-list {
+  position: relative;
+  margin-top: 40px;
+  width: 95%;
+
+  .person__container {
+    margin-bottom: 10px;
   }
 }

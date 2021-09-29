@@ -1,10 +1,11 @@
 import { useAppContext } from "../../../context/store";
 import PersonInfo from "../../components/PersonInfo/PersonInfo";
 import SearchBar from "../../layouts/SearchBar/SearchBar";
+import Pagination from "../../components/Pagination/Pagination";
+import OrderBy from "../../components/OrderBy/OrderBy";
 import logo from "../../../assets/tesodevlogo.jpg";
 
 import "./searchresults.scss";
-import Pagination from "../../components/Pagination/Pagination";
 
 const SearchResults = () => {
   const store = useAppContext();
@@ -32,6 +33,7 @@ const SearchResults = () => {
                   key={id}
                 />
               ))}
+            {currentPersons.length > 1 && <OrderBy />}
           </div>
           <Pagination />
         </div>
