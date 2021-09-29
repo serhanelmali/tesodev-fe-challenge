@@ -4,6 +4,7 @@ import SearchBar from "../../layouts/SearchBar/SearchBar";
 import logo from "../../../assets/tesodevlogo.jpg";
 
 import "./searchresults.scss";
+import Pagination from "../../components/Pagination/Pagination";
 
 const SearchResults = () => {
   const store = useAppContext();
@@ -13,7 +14,7 @@ const SearchResults = () => {
     <div className="search-results__container">
       <div className="search-results__container__wrapper">
         <div className="search-results__container__wrapper__left">
-          <img src={logo} />
+          <img src={logo} alt="TESODEV Logo" />
         </div>
         <div className="search-results__container__wrapper__right">
           <div className="search-results__container__wrapper__right__search">
@@ -32,6 +33,7 @@ const SearchResults = () => {
                 />
               ))}
           </div>
+          <Pagination />
         </div>
       </div>
     </div>

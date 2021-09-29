@@ -4,15 +4,15 @@ import getPersons from "../api/getPersons";
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [searchTerm, setSearchTerm] = useState("tur");
+  const [searchTerm, setSearchTerm] = useState("");
   const [persons, setPersons] = useState({
     message: null,
     data: [],
     error: null,
   });
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [personsPerPage, setPersonsPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(0);
+  const personsPerPage = 6;
   const indexOfLastPerson = currentPage * personsPerPage;
   const indexOfFirstPerson = indexOfLastPerson - personsPerPage;
   const currentPersons = persons.data.slice(
@@ -20,6 +20,7 @@ export function AppWrapper({ children }) {
     indexOfLastPerson
   );
 
+  //todo empty search fix - min 3 characters
   const fetchPersons = (value) => {
     setPersons({
       data: [],
@@ -43,6 +44,7 @@ export function AppWrapper({ children }) {
       },
       value
     );
+    setCurrentPage(1);
   };
 
   let sharedState = {
@@ -53,6 +55,8 @@ export function AppWrapper({ children }) {
     fetchPersons,
     currentPage,
     currentPersons,
+    personsPerPage,
+    setCurrentPage,
   };
 
   return (

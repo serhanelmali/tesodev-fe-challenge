@@ -11,7 +11,7 @@ const PersonInfo = ({ country, city, email, fullname, date }) => {
           <span className="person__top__mail">Email: {email}</span>
         </div>
         <span className="person__name">
-          {fullname} - {date.substr(date.length - 3)}
+          {fullname} - {date.substr(date.length - 4)}
         </span>
       </div>
     </div>
