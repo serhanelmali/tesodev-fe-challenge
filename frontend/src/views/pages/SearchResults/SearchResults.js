@@ -4,7 +4,6 @@ import SearchBar from "../../layouts/SearchBar/SearchBar";
 import Pagination from "../../components/Pagination/Pagination";
 import OrderBy from "../../components/OrderBy/OrderBy";
 import logo from "../../../assets/tesodevlogo.jpg";
-
 import "./searchresults.scss";
 
 const SearchResults = () => {

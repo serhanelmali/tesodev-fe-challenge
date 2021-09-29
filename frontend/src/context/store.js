@@ -11,11 +11,34 @@ export function AppWrapper({ children }) {
     error: null,
   });
 
+  const sortBy = (data, value) => {
+    if (value === "yearA") {
+      return data.sort((a, b) =>
+        a.date.substr(a.date.length - 4) > b.date.substr(b.date.length - 4)
+          ? 1
+          : -1
+      );
+    }
+
+    if (value === "yearB") {
+      return data.sort((a, b) =>
+        a.date.substr(a.date.length - 4) < b.date.substr(b.date.length - 4)
+          ? 1
+          : -1
+      );
+    }
+
+    if (value === "nameA") {
+      return data.sort((a, b) => (a.fullname > b.fullname ? 1 : -1));
+    }
+  };
+
+  const [sortValue, setSortValue] = useState("yearA");
   const [currentPage, setCurrentPage] = useState(0);
   const personsPerPage = 6;
   const indexOfLastPerson = currentPage * personsPerPage;
   const indexOfFirstPerson = indexOfLastPerson - personsPerPage;
-  const currentPersons = persons.data.slice(
+  const currentPersons = sortBy(persons.data, sortValue).slice(
     indexOfFirstPerson,
     indexOfLastPerson
   );
@@ -57,6 +80,7 @@ export function AppWrapper({ children }) {
     currentPersons,
     personsPerPage,
     setCurrentPage,
+    setSortValue,
   };
 
   return (

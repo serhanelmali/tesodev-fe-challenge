@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useAppContext } from "../../../context/store";
 import OrderIcon from "../../../assets/order.png";
 import "./orderby.scss";
 
 const OrderBy = () => {
+  const { setSortValue } = useAppContext();
   const [isClicked, setIsClicked] = useState(false);
 
   const clickHandler = () => {
@@ -21,8 +23,8 @@ const OrderBy = () => {
             <ul>
               <li>Name ascending</li>
               <li>Name descending</li>
-              <li>Year ascending</li>
-              <li>Year descending</li>
+              <li onClick={() => setSortValue("yearA")}>Year ascending</li>
+              <li onClick={() => setSortValue("yearB")}>Year descending</li>
             </ul>
           </div>
         )}
