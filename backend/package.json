@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Tesodev Frontend Challenge - API Server",
   "main": "app.js",
+  "engines": {
+    "node": "14.16"
+  },
   "scripts": {
     "start": "node app.js",
     "watch": "nodemon app.js",
