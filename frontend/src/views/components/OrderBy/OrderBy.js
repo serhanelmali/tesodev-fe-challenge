@@ -18,16 +18,18 @@ const OrderBy = () => {
           <img src={OrderIcon} />
           <span>Order By</span>
         </button>
-        {isClicked && (
-          <div className="order__options">
-            <ul>
-              <li onClick={() => setSortValue("nameA")}>Name ascending</li>
-              <li onClick={() => setSortValue("nameD")}>Name descending</li>
-              <li onClick={() => setSortValue("yearA")}>Year ascending</li>
-              <li onClick={() => setSortValue("yearD")}>Year descending</li>
-            </ul>
-          </div>
-        )}
+
+        <div
+          className="order__options"
+          style={isClicked ? { opacity: 1 } : { opacity: 0 }}
+        >
+          <ul>
+            <li onClick={() => setSortValue("nameA")}>Name ascending</li>
+            <li onClick={() => setSortValue("nameD")}>Name descending</li>
+            <li onClick={() => setSortValue("yearA")}>Year ascending</li>
+            <li onClick={() => setSortValue("yearD")}>Year descending</li>
+          </ul>
+        </div>
       </div>
     </>
   );

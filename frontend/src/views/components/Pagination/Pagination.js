@@ -15,6 +15,36 @@ const Pagination = () => {
     pageNumbers.push(i);
   }
 
+  const pageRange =
+    currentPage < pageNumbers.length - 5
+      ? [
+          currentPage,
+          Number(currentPage + 1),
+          Number(currentPage + 2),
+          "...",
+          pageNumbers.length - 2,
+          pageNumbers.length - 1,
+          pageNumbers.length,
+        ]
+      : currentPage >= pageNumbers.length - 2
+      ? [
+          1,
+          2,
+          3,
+          "...",
+          pageNumbers.length - 2,
+          pageNumbers.length - 1,
+          pageNumbers.length,
+        ]
+      : [
+          1,
+          pageNumbers.length - 5,
+          pageNumbers.length - 4,
+          pageNumbers.length - 3,
+          pageNumbers.length - 2,
+          pageNumbers.length - 1,
+          pageNumbers.length,
+        ];
   const handleClick = (e) => {
     setCurrentPage(Number(e.target.value));
   };
@@ -45,7 +75,7 @@ const Pagination = () => {
           </button>
         </li>
 
-        {pageNumbers.map((pageNumber) => (
+        {pageRange.map((pageNumber) => (
           <li key={pageNumber}>
             <button
               className={

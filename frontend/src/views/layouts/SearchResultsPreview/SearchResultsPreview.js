@@ -31,7 +31,6 @@ const SearchResultsPreview = () => {
           <Link to="/searchresults">Show more...</Link>
         </div>
       </div>
-      <div className="search-results-preview__container__wrapper__empty"></div>
     </div>
   );
 };

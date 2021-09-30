@@ -6,9 +6,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 1150px;
     min-height: 250px;
     padding-block: 15px;
-    margin-right: 20px;
     border: 1px solid #484848;
     border-radius: 4px;
 
@@ -17,11 +17,8 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      width: 90%;
-    }
 
-    &__empty {
-      width: 100px;
+      width: 90%;
     }
   }
 

@@ -2,10 +2,10 @@
   &__container {
     position: absolute;
     top: -40px;
-    right: -175px;
+    right: -50px;
     display: flex;
     flex-direction: column;
-    width: 224px;
+    justify-content: center;
   }
 
   &__button {
@@ -22,10 +22,9 @@
   }
 
   &__options {
-    align-self: flex-end;
     display: flex;
     justify-content: center;
-    width: 150px;
+    width: 130px;
     height: 120px;
     border: 1px solid #484848;
     background: white;
@@ -52,6 +51,16 @@
           border-radius: 4px;
         }
       }
+    }
+  }
+}
+
+@media screen and(max-width: 720px) {
+  .order__container {
+    right: -35px;
+    button {
+      justify-content: center;
+      font-size: 12px;
     }
   }
 }
