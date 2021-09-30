@@ -15,7 +15,7 @@ const OrderBy = () => {
     <>
       <div className="order__container">
         <button className="order__button" onClick={() => clickHandler()}>
-          <img src={OrderIcon} />
+          <img src={OrderIcon} alt="Order Icon" />
           <span>Order By</span>
         </button>
 

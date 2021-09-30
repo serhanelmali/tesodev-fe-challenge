@@ -1,9 +1,14 @@
 .pagination-container {
   display: flex;
-  justify-content: center;
   padding: 0;
   width: 100%;
+  max-width: 500px;
   list-style: none;
+  align-self: center;
+
+  li {
+    flex: 1;
+  }
 
   &__button,
   &__button--selected,
@@ -31,5 +36,41 @@
 
   &__button__next-previous-button {
     width: 100px;
+  }
+
+  &__blob {
+    width: 25;
+    height: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    letter-spacing: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .pagination-container {
+    width: 100%;
+    justify-content: center;
+    li {
+      width: 50%;
+      flex: 0;
+    }
+    &__button,
+    &__button--selected {
+      display: none;
+    }
+    &__button__next-previous-button {
+      display: block;
+      &:first-of-type {
+        margin-right: 5px;
+      }
+    }
+
+    &__blob {
+      display: none;
+    }
   }
 }

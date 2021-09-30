@@ -35,6 +35,7 @@
   margin-top: 40px;
   width: 95%;
   max-width: 1150px;
+  min-height: 400px;
 
   .person__container {
     margin-bottom: 10px;
@@ -44,6 +45,7 @@
 @media screen and (max-width: 780px) {
   .search-result__container__wrapper__right__person-list {
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -72,8 +74,14 @@
 }
 
 @media screen and (max-width: 480px) {
-  .search-results__container__wrapper__left {
-    display: none;
+  .search-results__container__wrapper {
+    &__left {
+      display: none;
+    }
+
+    &__right {
+      padding: 0;
+    }
   }
   .search-container {
     margin-right: 10px;

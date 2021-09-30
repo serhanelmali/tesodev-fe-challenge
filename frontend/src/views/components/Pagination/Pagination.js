@@ -37,7 +37,7 @@ const Pagination = () => {
           pageNumbers.length,
         ]
       : [
-          1,
+          "F",
           pageNumbers.length - 5,
           pageNumbers.length - 4,
           pageNumbers.length - 3,
@@ -46,7 +46,9 @@ const Pagination = () => {
           pageNumbers.length,
         ];
   const handleClick = (e) => {
-    setCurrentPage(Number(e.target.value));
+    e.target.value > 0
+      ? setCurrentPage(Number(e.target.value))
+      : setCurrentPage(1);
   };
 
   const handleNext = (e) => {
@@ -75,21 +77,27 @@ const Pagination = () => {
           </button>
         </li>
 
-        {pageRange.map((pageNumber) => (
-          <li key={pageNumber}>
-            <button
-              className={
-                pageNumber === currentPage
-                  ? "pagination-container__button--selected"
-                  : "pagination-container__button"
-              }
-              value={pageNumber}
-              onClick={(e) => handleClick(e)}
-            >
-              {pageNumber}
-            </button>
-          </li>
-        ))}
+        {pageRange.map((pageNumber) =>
+          pageNumber > 0 || pageNumber === "F" ? (
+            <li key={pageNumber}>
+              <button
+                className={
+                  pageNumber === currentPage
+                    ? "pagination-container__button--selected"
+                    : "pagination-container__button"
+                }
+                value={pageNumber}
+                onClick={(e) => handleClick(e)}
+              >
+                {pageNumber}
+              </button>
+            </li>
+          ) : (
+            <div className="pagination-container__blob" key={pageNumber}>
+              <span>...</span>
+            </div>
+          )
+        )}
 
         <li>
           <button
