@@ -36,3 +36,40 @@
     margin-bottom: 10px;
   }
 }
+
+@media screen and (min-width: 481px) and (max-width: 720px) {
+  .search-results__container__wrapper {
+    width: 90%;
+
+    &__left {
+      display: none;
+    }
+
+    &__right {
+      padding: 0;
+    }
+
+    .search-container {
+      width: 80%;
+      margin: 0;
+
+      &__input {
+        width: 95%;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-results__container__wrapper__left {
+    display: none;
+  }
+  .search-container {
+    margin-right: 10px;
+
+    &__input {
+      width: 92%;
+    }
+  }
+} ;
