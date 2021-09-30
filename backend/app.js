@@ -1,13 +1,12 @@
 require("dotenv").config();
 const PORT = process.env.PORT;
 const express = require("express");
-const cors = require("cors");
+const path = require("path");
 const searchController = require("./controller/search-controller");
 
 const app = express();
 
-app.use(cors());
-
+app.use("/", express.static(path.join(__dirname, "../frontend/build")));
 app.use("/search", searchController.sendData);
 
 app.listen(PORT, console.log(`Server is running on ${PORT}`));
