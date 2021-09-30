@@ -45,7 +45,7 @@ const Pagination = () => {
           </button>
         </li>
 
-        {pageNumbers.map((pageNumber, id) => (
+        {pageNumbers.map((pageNumber) => (
           <li key={pageNumber}>
             <button
               className={
