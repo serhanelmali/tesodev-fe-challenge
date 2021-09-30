@@ -1,0 +1,22 @@
+{
+  "name": "tesodev-fe-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-client": "cd frontend && npm run build",
+    "install-all": "cd frontend && npm install && cd .. &&cd backend && npm install",
+    "heroku-postbuild": "npm run install-all && npm run build-client",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serhanelmali/tesodev-fe-challenge.git"
+  },
+  "author": "Serhan Elmali <serhanelmali@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serhanelmali/tesodev-fe-challenge/issues"
+  },
+  "homepage": "https://github.com/serhanelmali/tesodev-fe-challenge#readme"
+}
