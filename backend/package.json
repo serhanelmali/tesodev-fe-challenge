@@ -4,8 +4,12 @@
   "description": "Tesodev Frontend Challenge - API Server",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "watch": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-client": "cd frontend && npm run build",
+    "install-all": "cd frontend && npm install && cd .. && npm install",
+    "heroku-postbuild": "npm run install-all && npm run build-client"
   },
   "author": "Serhan Elmali <serhanelmali@gmail.com>",
   "license": "ISC",
