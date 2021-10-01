@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getPersons = async ({ onSuccess, onError } = {}, value) => {
   try {
-    const result = await axios(`http://localhost/search?searchterm=${value}`);
+    const result = await axios(`/search?searchterm=${value}`);
     if (onSuccess) onSuccess(result);
     return result;
   } catch (err) {
