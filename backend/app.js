@@ -2,7 +2,7 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 const express = require("express");
 const path = require("path");
-const searchController = require("./controller/search-controller");
+const searchController = require("./controller/searchController");
 
 const app = express();
 
