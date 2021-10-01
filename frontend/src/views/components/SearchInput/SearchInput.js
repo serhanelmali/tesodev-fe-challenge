@@ -2,9 +2,9 @@ import { useAppContext } from "../../../context/store";
 import "./searchInput.scss";
 
 const SearchInput = () => {
-  const isError = false;
-  const errorText = "Error text";
+  const errorText = "Minimum search length must be 3";
   const store = useAppContext();
+  const isError = store?.isError;
   const setSearchTerm = store.setSearchTerm;
 
   const onChangeHandler = (event) => {

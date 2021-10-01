@@ -50,32 +50,37 @@ export function AppWrapper({ children }) {
     indexOfFirstPerson,
     indexOfLastPerson
   );
+  const [isError, setIsError] = useState(false);
 
-  //todo empty search fix - min 3 characters
   const fetchPersons = (value) => {
+    setIsError(false);
     setPersons({
       data: [],
       error: null,
     });
 
-    getPersons(
-      {
-        onSuccess(result) {
-          setPersons({
-            data: result.data.data,
-            error: null,
-          });
-        },
-        onError(error) {
-          setPersons({
-            data: [],
-            error: error,
-          });
-        },
-      },
-      value
-    );
-    setCurrentPage(1);
+    if (value.length >= 3) {
+      return (
+        getPersons(
+          {
+            onSuccess(result) {
+              setPersons({
+                data: result.data.data,
+                error: null,
+              });
+            },
+            onError(error) {
+              setPersons({
+                data: [],
+                error: error,
+              });
+            },
+          },
+          value
+        ),
+        setCurrentPage(1)
+      );
+    } else setIsError(true);
   };
 
   let sharedState = {
@@ -89,6 +94,7 @@ export function AppWrapper({ children }) {
     personsPerPage,
     setCurrentPage,
     setSortValue,
+    isError,
   };
 
   return (

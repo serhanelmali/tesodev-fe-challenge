@@ -1,6 +1,6 @@
 import { useAppContext } from "../../../context/store";
 
-import "./searchButton.scss";
+import "./searchbutton.scss";
 
 const SearchButton = () => {
   const store = useAppContext();
